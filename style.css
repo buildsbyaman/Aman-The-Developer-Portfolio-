@@ -18,8 +18,37 @@
   box-sizing: border-box;
 }
 
-html {
+html::-webkit-scrollbar {
   scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #37465d;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #1e293b;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #27313f;
+}
+
+.popup-animate {
+  animation: popup-animation 1s ease-in-out;
+  animation-timeline: view(block);
+  animation-range: entry 0% cover 35%;
+}
+
+@keyframes popup-animation {
+  from {
+    transform: translateY(-18px) scale(0.7);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
 }
 
 body {
@@ -255,6 +284,9 @@ body {
   color: var(--muted);
   font-size: clamp(16px, 4vw, 18px);
   line-height: 1.7;
+}
+
+.herodesc {
   margin-bottom: clamp(16px, 4vw, 24px);
 }
 
